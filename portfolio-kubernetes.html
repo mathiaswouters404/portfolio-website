@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Portfolio - Kubernetes Cluster</title>
+
+  <!-- Favicons -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicon/favicon-16x16.png">
+  <link rel="manifest" href="/assets/img/favicon/site.webmanifest">
+  <link rel="mask-icon" href="/assets/img/favicon/safari-pinned-tab.svg" color="#5bbad5">
+  <link rel="shortcut icon" href="/assets/img/favicon/favicon.ico">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="msapplication-config" content="/assets/img/favicon/browserconfig.xml">
+  <meta name="theme-color" content="#ffffff">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <main id="main">
+
+    <!-- ======= Portfolio Details Section ======= -->
+    <section id="portfolio-details" class="portfolio-details">
+      <div class="container">
+
+        <div class="row gy-4">
+
+          <div class="col-lg-8">
+            <div class="portfolio-details-slider swiper">
+              <div class="swiper-wrapper align-items-center">
+
+                <div class="swiper-slide">
+                  <img src="assets/img/portfolio/kubernetes/kubernetes_1.png" alt="kubernetes_1">
+                </div>
+
+                <div class="swiper-slide">
+                  <img src="assets/img/portfolio/kubernetes/kubernetes_2.png" alt="kubernetes_2">
+                </div>
+
+                <div class="swiper-slide">
+                  <img src="assets/img/portfolio/kubernetes/kubernetes_3.png" alt="kubernetes_3">
+                </div>
+
+              </div>
+              <div class="swiper-pagination"></div>
+            </div>
+          </div>
+
+          <div class="col-lg-4">
+            <div class="portfolio-info">
+              <h3>
+                <span class="project-info">Project information</span>
+                <i class="fa-solid fa-user"></i>
+              </h3>
+              <p>As part of the Linux Webservices course, I undertook a project focused on setting up a Kubernetes cluster. The objective was to deploy an NGINX, FastAPI, and MongoDB stack using microk8s.</p>
+              <p>For more information download this report: <a href="/assets/kubernetes_cluster_report.pdf" target="_blank">Kubernetes Cluster report</a></p>
+              <p></p>
+              <p>
+                <ul>
+                  Here are also 2 links to the GitHub repositories of the web server and the api:
+                  <li class="kubernetes-list"><a href="https://github.com/mathiaswouters/milestone2-github-webserver" target="_blank">Webserver GitHub repo</a></li>
+                  <li class="kubernetes-list"><a href="https://github.com/mathiaswouters/milestone2-github-api" target="_blank">API GitHub repo</a></li>
+                </ul>
+              </p>
+
+            </div>
+            <div class="portfolio-description">
+              <h2>Kubernetes Cluster</h2>
+              <p>To begin, I created a Dockerfile for my web server and API, which I then uploaded to the Docker Hub. The API itself was relatively small, primarily consisting of a GET request to retrieve user information. Additionally, I implemented a simple GET request on the root of my website to display a "hello world" message, allowing for easy verification of the API's successful operation. Leveraging the default Dockerfile provided by MongoDB on the Docker Hub, my API seamlessly interacted with the MongoDB database. YAML configuration files were prepared for each of the three services involved.</p>
+              <p>For the setup of virtual machines (VMs), I utilized Vagrant due to its simplicity and speed. I had previously developed a script that Vagrant automatically ran when creating a new VM, taking care of the installation of Docker and microk8s. In total, I employed two VMs: the first served as both the master and worker node, while the second was exclusively designated as a worker node. With everything functioning correctly, I proceeded to populate the database manually since I did not utilize a persistent volume, resulting in the inclusion of my name on the web page.</p>
+              <p>To handle load balancing, I incorporated MetalLB, which comes pre-installed with microk8s. Enabling MetalLB was a straightforward process. The same simplicity applied to the setup of the monitoring software Prometheus, which required only the enabling of the feature and port forwarding.</p>
+              <p></p>
+              <p>The goal of my Kubernetes cluster project was to deploy an NGINX, FastAPI, and MongoDB stack using microk8s, as part of the Linux Webservices course. Through careful configuration and implementation, I successfully established a functional cluster environment.</p>
+              <p>During the project, I gained valuable experience in Docker containerization, YAML configuration, and VM setup using Vagrant. I learned how to create a Dockerfile for my web server and API, upload images to the Docker Hub, and seamlessly interact with a MongoDB database. Utilizing Vagrant simplified the setup of virtual machines, allowing for quick and efficient deployment of the cluster.</p>
+              <p>By incorporating MetalLB for load balancing and Prometheus for monitoring, I ensured the scalability and observability of my cluster. These additional components enhanced the overall functionality and performance of the system.</p>
+              <p>Through this project, I achieved my personal goal of gaining hands-on experience with Kubernetes and its related tools. I developed a deeper understanding of container orchestration and learned how to create a resilient and scalable infrastructure.</p>
+              <p>Moving forward, I intend to further optimize and expand my Kubernetes cluster, exploring additional features and services to enhance its capabilities. This project has equipped me with the knowledge and skills to tackle future challenges in deploying and managing containerized applications.</p>
+              <p>In conclusion, the Kubernetes cluster I built serves as a powerful platform for deploying and managing applications at scale. It offers seamless scalability, load balancing, and monitoring capabilities, making it an ideal choice for modern application development and deployment scenarios.</p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Portfolio Details Section -->
+
+  </main><!-- End #main -->
+
+  <div id="preloader"></div>
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/typed.js/typed.min.js"></script>
+  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>

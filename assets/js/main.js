@@ -77,7 +77,7 @@
   let backtotop = select('.back-to-top')
   if (backtotop) {
     const toggleBacktotop = () => {
-      if (window.scrollY > 100) {
+      if (window.scrollY> 100) {
         backtotop.classList.add('active')
       } else {
         backtotop.classList.remove('active')
@@ -86,6 +86,24 @@
     window.addEventListener('load', toggleBacktotop)
     onscroll(document, toggleBacktotop)
   }
+
+  /**
+   * Language button
+   */
+
+  let language = select('.language')
+  if (language) {
+    const toggleLanguage = () => {
+      if (window.scrollY > 100) {
+        language.classList.add('active')
+      } else {
+        language.classList.remove('active')
+      }
+    }
+    window.addEventListener('load', toggleLanguage)
+    onscroll(document, toggleLanguage)
+  }
+
 
   /**
    * Mobile nav toggle
@@ -267,3 +285,78 @@
   new PureCounter();
 
 })()
+
+// ============================================
+// ========== CHANGE LANGUAGE TEST 1 ==========
+// ============================================
+
+// function loadLanguage(languageFile) {
+//   // Fetch the content of the selected language file
+//   fetch(languageFile)
+//       .then(response => response.text())
+//       .then(html => {
+//           // Replace the current page's content with the fetched content
+//           document.body.innerHTML = html;
+//           history.pushState({}, '', languageFile);
+//       })
+//       .catch(error => console.error('Error:', error));
+// }
+
+// function toggleLanguage() {
+//   const languageButton = document.querySelector('.language');
+//   const languageSpan = document.querySelector('.language span');
+//   let isEnglish = true;
+
+//   languageButton.addEventListener('click', function(event) {
+//       event.preventDefault();
+
+//       if (isEnglish) {
+//           languageSpan.textContent = 'NL';
+//           loadLanguage('index_nl.html');
+//           languageSpan.style.fontSize = '20px';
+//           isEnglish = false;
+//       } else {
+//           languageSpan.textContent = 'EN';
+//           loadLanguage('index.html');
+//           languageSpan.style.fontSize = '20px';
+//           isEnglish = true;
+//       }
+//   });
+// }
+
+// // Call the function to enable the language toggle
+// toggleLanguage();
+
+
+// ============================================
+// ========== CHANGE LANGUAGE TEST 2 ==========
+// ============================================
+function toggleLanguage() {
+  const languageButton = document.querySelector('.language');
+  const languageSpan = document.querySelector('.language span');
+  const englishContent = document.querySelector('.english-content');
+  const dutchContent = document.querySelector('.dutch-content');
+
+  let isEnglish = true; // Track the current language
+
+  languageButton.addEventListener('click', function(event) {
+      event.preventDefault(); // Prevent the default action (e.g., form submission or page reload)
+
+      if (isEnglish) {
+          languageSpan.textContent = 'NL';
+          englishContent.style.display = 'none';
+          dutchContent.style.display = 'block';
+          languageSpan.style.fontSize = '20px';
+          isEnglish = false;
+      } else {
+          languageSpan.textContent = 'EN';
+          englishContent.style.display = 'block';
+          dutchContent.style.display = 'none';
+          languageSpan.style.fontSize = '20px';
+          isEnglish = true;
+      }
+  });
+}
+
+// Call the function to enable the language toggle
+toggleLanguage();
